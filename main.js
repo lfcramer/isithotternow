@@ -2,7 +2,7 @@ window.onload = function(){
 
     // Get API for temp today
     
-    
+    //More notes here
     https://api.darksky.net/forecast/3c45ed24ed5c018c7ee15ecabcfe5901/37.8267,-122.4233
     
     var link = "https://api.darksky.net/forecast/"
