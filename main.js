@@ -67,10 +67,12 @@ var todayDiv = document.getElementById("today");
         if (todayTemp > yesterYearTemp){
             answerDiv.innerHTML = "It's hotter now."
             $("html").css("background-color","red");
+            //Try addclass funtion and do this in CSS.
         }
         else if(todayTemp < yesterYearTemp) {
             answerDiv.innerHTML = "It was hotter then."
             $("html").css("background-color","blue");
+            //same here, change styles in css always.
         }
         else {
             answerDiv.innerHTML = "Sources are fuzzy. Try again later"
