@@ -13,10 +13,16 @@ window.onload = function(){
     
 // get ahold of the id and store in variable
 // set innerHTML to a string.
+function pad(n) { return ("0" + n).slice(-2); }
 
     var todayTemp;
     var yesterYearTemp;
-
+    var today = new Date();
+    var date = (today.getFullYear()-30)+'-'+pad((today.getMonth()+1))+'-'+pad(today.getDate());
+    console.log(date)
+    var now = new Date();
+    var currentTime = pad(now.getHours()) + ":" + pad(now.getMinutes()) + ":" + pad(now.getSeconds());
+    console.log(currentTime)
 var todayDiv = document.getElementById("today");
     
     $.getJSON(link + key + "/" + loc + "?callback=?", function(data){
@@ -35,7 +41,9 @@ var todayDiv = document.getElementById("today");
     // get api for temp 30 years ago
     //https://api.darksky.net/forecast/[key]/[latitude],[longitude],[time]
 
-      var time = "1989-07-16T14:00:00";
+    //   var time = "1989-04-17T12:00:00";
+    var time = date + "T" + currentTime;
+    console.log(time)
       var timestamp = "608079594";
       var yesterYearDiv = document.getElementById("yesterYear");
 
@@ -44,6 +52,7 @@ var todayDiv = document.getElementById("today");
         $.getJSON(link + key + "/" + loc + "," + time + "?callback=?", function(data){
             if (data){
                 yesterYearTemp = data.currently.apparentTemperature
+                // yesterYearTemp = 89
                 yesterYearDiv.innerHTML = Math.floor(yesterYearTemp);
 
                 updateUI();
@@ -66,13 +75,11 @@ var todayDiv = document.getElementById("today");
 
         if (todayTemp > yesterYearTemp){
             answerDiv.innerHTML = "It's hotter now."
-            $("html").css("background-color","red");
-            //Try addclass funtion and do this in CSS.
+    
         }
         else if(todayTemp < yesterYearTemp) {
             answerDiv.innerHTML = "It was hotter then."
-            $("html").css("background-color","blue");
-            //same here, change styles in css always.
+     
         }
         else {
             answerDiv.innerHTML = "Sources are fuzzy. Try again later"
