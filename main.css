@@ -3,9 +3,10 @@
 html {
     
     /* Cool background */
-    background: radial-gradient(755.50px at 50% 50%, #D2DEFD 0%, #A8BFFA 100%);
+    /* background: radial-gradient(755.50px at 50% 50%, #D2DEFD 0%, #A8BFFA 100%); */
     /* Warm background */
-    /* background: radial-gradient(755.50px at 50% 50%, #FDE2D2 0%, #FAA8A8 100%); */
+    background: radial-gradient(755.50px at 50% 50%, #FDE2D2 0%, #FAA8A8 100%);
+    background-size: cover;
 }
 
 
@@ -34,8 +35,6 @@ h1 {
     text-align: center;
 }
 
-
-
 .temp{    
     font-family: Roboto;
     font-style: normal;
@@ -58,6 +57,15 @@ h1 {
     width: 50%;
     display: inline-block;
  
+}
+
+@media only screen and (max-width: 768px) {
+    .then {
+        width: 100%;
+    }
+    .now {
+        width: 100%;
+    }
 }
 
 
