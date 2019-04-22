@@ -68,7 +68,9 @@ function pad(n) { return ("0" + n).slice(-2); }
     //     change background warm
     var answerDiv = document.getElementById("answer");
 
+
     function updateUI(){
+
         
         console.log("today:" + todayTemp);
         console.log("THEN:" + yesterYearTemp);
@@ -84,7 +86,14 @@ function pad(n) { return ("0" + n).slice(-2); }
         else {
             answerDiv.innerHTML = "Sources are fuzzy. Try again later"
         }
+
+   
+
     }
+
+
+
+    
 
     // else 
     //     print no
