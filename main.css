@@ -24,7 +24,7 @@ h1 {
     
     color: #FFFFFF;
 
-    animation: seeme 3s ease-out;
+    animation: seeme 12s ease-out;
 }
 
 .dateHeadline{
@@ -38,7 +38,7 @@ h1 {
     text-align: center;
 }
 @keyframes seeme {
-    0% {
+    0%, 75% {
         opacity: 0;
     }
     100% {
@@ -68,7 +68,7 @@ h1 {
     line-height: normal;
     color: #ffffff;
     text-align: center;
-    animation: stretch 10s ease-out;
+    animation: stretch 9s ease-out;
          
        
 }
@@ -103,9 +103,24 @@ h1 {
     .dateHeadline {
         width: 100%;
     }
+
+    @keyframes stretchToo {
+        0% {
+            
+            opacity: 0;
+            font-size: 0px;
+        }
+        100% {
+            
+            opacity: 1;
+            font-size: 175px;
+        }
+    }
+
     .temp {
         width: 100%;
         font-size: 175px;
+        animation: stretchToo 9s ease-out;
         
     }
     .then {
