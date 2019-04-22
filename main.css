@@ -1,12 +1,13 @@
 
 
 html {
-    
+
+    background-size: cover;
     /* Cool background */
     /* background: radial-gradient(755.50px at 50% 50%, #D2DEFD 0%, #A8BFFA 100%); */
     /* Warm background */
-    background: radial-gradient(755.50px at 50% 50%, #FDE2D2 0%, #FAA8A8 100%);
-    background-size: cover;
+    /* background: radial-gradient(755.50px at 50% 50%, #FDE2D2 0%, #FAA8A8 100%); */
+    
 }
 
 
@@ -22,6 +23,8 @@ h1 {
     text-align: center;
     
     color: #FFFFFF;
+
+    animation: seeme 3s ease-out;
 }
 
 .dateHeadline{
@@ -34,8 +37,30 @@ h1 {
     color: #ffffff;
     text-align: center;
 }
+@keyframes seeme {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes stretch {
+    0% {
+        
+        opacity: 0;
+        font-size: 0px;
+    }
+    100% {
+        
+        opacity: 1;
+        font-size: 282px;
+    }
 
-.temp{    
+}
+
+.temp{ 
+    
     font-family: Roboto;
     font-style: normal;
     font-weight: 200;
@@ -43,28 +68,52 @@ h1 {
     line-height: normal;
     color: #ffffff;
     text-align: center;
-    
+    animation: stretch 10s ease-out;
+         
+       
 }
+
+
 
 .then {
     width: 50%;
     left: 0px;
-    display: inline-block;
+    display: inline-block;  
     float: left;
+    
 }
 
 .now {
     width: 50%;
     display: inline-block;
+    
+    
+    
  
 }
 
-@media only screen and (max-width: 768px) {
-    .then {
+@media screen and (max-width: 600px) {
+
+    h1 {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        font-size: 100px;
+    }
+
+    .dateHeadline {
         width: 100%;
     }
-    .now {
+    .temp {
         width: 100%;
+        font-size: 175px;
+        
+    }
+    .then {
+        width: 50%;
+        
+    }
+    .now {
+        width: 50%;
     }
 }
 

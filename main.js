@@ -52,7 +52,10 @@ function pad(n) { return ("0" + n).slice(-2); }
         $.getJSON(link + key + "/" + loc + "," + time + "?callback=?", function(data){
             if (data){
                 yesterYearTemp = data.currently.apparentTemperature
-                // yesterYearTemp = 89
+                
+                // Comment out line above to test different temps.
+                // yesterYearTemp = 88
+                
                 yesterYearDiv.innerHTML = Math.floor(yesterYearTemp);
 
                 updateUI();
@@ -77,11 +80,12 @@ function pad(n) { return ("0" + n).slice(-2); }
 
         if (todayTemp > yesterYearTemp){
             answerDiv.innerHTML = "It's hotter now."
+            document.body.style.background = "radial-gradient(755.50px at 50% 50%, #FDE2D2 0%, #FAA8A8 100%)";
     
         }
         else if(todayTemp < yesterYearTemp) {
             answerDiv.innerHTML = "It was hotter then."
-     
+            document.body.style.background = "radial-gradient(755.50px at 50% 50%, #D2DEFD 0%, #A8BFFA 100%)";
         }
         else {
             answerDiv.innerHTML = "Sources are fuzzy. Try again later"
